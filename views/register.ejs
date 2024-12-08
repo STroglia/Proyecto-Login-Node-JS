@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+    
+      body {
+        background-image: url('https://media.istockphoto.com/id/514227650/es/foto/grupo-de-amigos-de-relajaci%C3%B3n-en-la-playa.jpg?s=612x612&w=0&k=20&c=-EdXm2nOYMO_HXXhR6FgIB5PJrSL4tLQpTBtq1Pa8yo='); 
+        background-size: contain; /* Ajusta la imagen para que no se recorte */
+        background-position: center center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-attachment: fixed; /* Mantiene la imagen fija cuando se hace scroll */
+        margin: 0;
+        font-family: Arial, sans-serif;
+  }
+      
+
+      .form-container {
+        max-width: 400px; /* Ajusta el ancho del formulario */
+        margin: 0 auto; /* Centra el formulario en la pantalla */
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        background-color: #007bff; /* Cambia el color del encabezado */
+        color: white;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: 48%; /* Hacemos los botones más pequeños */
+      }
+
+      .btn-secondary {
+        float: left; /* Alineamos el botón de cancelar a la izquierda */
+      }
+
+      .btn-primary {
+        float: right; /* Alineamos el botón de registrar a la derecha */
+      }
+    </style>
+    <title>Registro con Node.js + JWT + MySQL</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 form-container">
+                <div class="card border-warning">
+                    <div class="card-header bg-warning text-white">Registrarse</div>
+                    <div class="card-body">
+                        <form action="/register" method="POST">        
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre completo</label>
+                                <input id="name" name="name" type="text" class="form-control" required>              
+                            </div>
+                            <div class="mb-3">
+                                <label for="user" class="form-label">Cuenta de usuario</label>
+                                <input id="user" name="user" type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pass" class="form-label">Contraseña</label>
+                                <input id="pass" name="pass" type="password" class="form-control" required>
+                            </div>                            
+                    </div>
+                    <div class="card-footer bg-transparent border-warning">
+                        <a href="/" class="btn btn-secondary bs-dark-bg-subtle">Cancelar</a>
+                        <button type="submit" class="btn btn-primary bg-warning">Registrar</button>
+                    </div>
+                    </form>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

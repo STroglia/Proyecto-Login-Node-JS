@@ -1,0 +1,13 @@
+/* Estilos boton color lila */
+.btn-bd-primary{font-weight:600;color:#fff;background-color:#7952b3;border-color:#7952b3}
+.btn-bd-primary:hover,.btn-bd-primary:active{color:#fff;background-color:#61428f;border-color:#61428f}
+.btn-bd-primary:focus{box-shadow:0 0 0 3px rgba(121,82,179,0.25)}
+.btn-primary, .btn-bd-primary {
+    font-size: 15px; /* Cambia el tamaño de letra aquí */
+    padding: 10px; /* Ajusta el padding si es necesario */
+  }
+
+  /* Personaliza el tamaño de la fuente para los campos User y Password */
+  .form-control {
+    font-size: 14px; /* Cambia el tamaño de letra de los campos de texto */
+  }

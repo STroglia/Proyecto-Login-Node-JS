@@ -1,0 +1,28 @@
+<form action="/buscar-cancion" method="POST">
+    <label for="nombre">Nombre de la Canción:</label>
+    <input type="text" name="nombre" required>
+    <button type="submit">Buscar</button>
+</form>
+
+<% if (cancion) { %>
+<form action="/editar-cancion" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<%= cancion.id %>"> <!-- Campo oculto para el ID -->
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="<%= cancion.nombre %>" required>
+
+    <label for="artista">Artista:</label>
+    <input type="text" name="artista" value="<%= cancion.artista %>" required>
+
+    <label for="album">Álbum:</label>
+    <input type="text" name="album" value="<%= cancion.album || '' %>">
+
+    <label for="archivo">Archivo de la canción:</label>
+    <input type="file" name="archivo">
+
+    <label for="foto_tapa">Foto de Tapa:</label>
+    <input type="file" name="foto_tapa">
+
+    <button type="submit">Actualizar Canción</button>
+</form>
+<% } %>

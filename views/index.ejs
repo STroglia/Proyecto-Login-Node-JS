@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gestión de canciones y álbumes">
+    <meta name="author" content="María">
+    <meta name="generator" content="Bootstrap 5">
+    <title>Mar de Música</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <style>
+      /* Mejoras en la apariencia de la página */
+      .navbar {
+        background-color: #ff6f00; /* Naranja brillante */
+      }
+
+      .navbar a {
+        color: white !important;
+      }
+
+      .sidebar {
+        background-color: #ff9800; /* Color del menú lateral */
+      }
+
+      .sidebar .nav-link {
+        color: white;
+      }
+
+      .sidebar .nav-link:hover {
+        background-color: #e65100; /* Hover en las opciones */
+      }
+
+      .btn-primary {
+        background-color: #ff6f00;
+        border-color: #ff6f00;
+      }
+
+      .btn-primary:hover {
+        background-color: #e65100;
+        border-color: #e65100;
+      }
+
+      .card-header, .card-footer {
+        background-color: #ff9800; /* Fondo naranja */
+      }
+
+      h2, h3 {
+        color: #333; /* Mejor contraste en títulos */
+      }
+
+      .dropdown-menu a {
+        color: #333;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #ff6f00;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-5" href="#">Mar de Música</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a type="button" class="fs-4 text-dark text-decoration-none me-3" href="logout">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Menú Lateral -->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar">
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active fs-5" href="#">
+                  Inicio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/explorar">
+                  Explorar
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/mis-canciones">
+                  Mis Canciones
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/mis-albumes">
+                  Mis Álbumes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/perfil">
+                  Perfil
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/ajustes">
+                  Ajustes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/ayuda">
+                  Ayuda
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Bienvenido a Mar de Música</h2>
+            <h3>Hola, 
+              <% if (user) { %>
+                <span class="fs-3 text-dark"><%= user.name %></span>
+              <% } %>
+            </h3>
+          </div>
+
+          <div class="mb-4">
+            <h3>Gestionar Canciones</h3>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Selecciona una acción
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="/alta-cancion">Agregar Canción</a></li>
+                <li><a class="dropdown-item" href="/listar-canciones">Listar Canciones</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h3>Gestionar Álbumes</h3>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownAlbumMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Selecciona una acción
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownAlbumMenuButton">
+                <li><a class="dropdown-item" href="/alta-album">Agregar Álbum</a></li>
+                <li><a class="dropdown-item" href="/listar-albumes">Listar Álbumes</a></li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

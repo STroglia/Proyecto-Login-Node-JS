@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Subir Canción - Mar de Música</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* Estilos personalizados */
+    .form-container {
+      max-width: 800px; /* Define el ancho máximo del formulario */
+      margin: 0 auto; /* Centra el formulario */
+    }
+
+    .btn-primary {
+      background-color: #FF7F50; /* Naranja coral */
+      border-color: #FF7F50;
+    }
+
+    .btn-primary:hover {
+      background-color: #FF6347; /* Tomate */
+      border-color: #FF6347;
+    }
+
+    .btn-secondary {
+      background-color: #D3D3D3; /* Gris claro */
+      border-color: #D3D3D3;
+    }
+
+    h3 {
+      color: #FF4500; /* Naranja oscuro */
+    }
+
+    .border {
+      border-color: #D3D3D3 !important; /* Bordes en gris claro */
+    }
+  </style>
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar navbar-dark sticky-top bg-secondary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Mar de Música</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a type="button" class="px-3 py-1 fs-5 badge bg-secondary" href="logout">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Botón de regreso a la página de inicio -->
+  <main class="container mt-4">
+    <div class="mb-3">
+      <a href="/" class="btn btn-secondary">Volver a Inicio</a>
+    </div>
+
+    <!-- Formulario de alta de canción -->
+    <div class="form-container mb-4 p-3 border rounded shadow-sm">
+      <h3 class="text-center">Subir Canción</h3>
+      <form action="/alta-cancion" method="POST" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+          <label for="nombre" class="form-label">Nombre de la canción:</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" required>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="artista" class="form-label">Artista:</label>
+          <input type="text" name="artista" id="artista" class="form-control" required>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="album" class="form-label">Álbum (ID):</label>
+          <input type="number" name="album" id="album" class="form-control">
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="archivo" class="form-label">Archivo de la canción:</label>
+          <input type="file" name="archivo" id="archivo" class="form-control" required> 
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100">Subir Canción</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS and Feather Icons -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
